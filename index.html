@@ -10,6 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -125,6 +126,19 @@
             transform: translateY(-3px);
             background-color: #1ebd58;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .btn-projects {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.1);
+        }
+        .btn-projects:hover {
+            transform: translateY(-3px);
+            background-color: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
         }
 
         .cta-btn svg {
@@ -243,12 +257,111 @@
             font-size: 1.1rem;
         }
 
+        /* Projects Section Styling */
+        .projects-section {
+            background-color: #f1f3f5;
+            padding: 60px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--text-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-badge {
+            background-color: var(--primary);
+            color: var(--secondary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: fit-content;
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 600;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .tech-tag {
+            background: #e9ecef;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
         footer {
             background-color: #050c16;
             color: var(--text-light);
             text-align: center;
             padding: 40px 20px;
-            margin-top: 60px;
         }
 
         .contact-info {
@@ -324,10 +437,15 @@
                 <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.184 8.184 0 0 1-1.26-4.38c.01-4.54 3.7-8.22 8.25-8.22zm-3.83 4.3c-.21 0-.46.08-.66.3-.2.22-.76.74-.76 1.81 0 1.07.78 2.1 0.89 2.25.11.15 1.53 2.34 3.71 3.28.52.22.92.35 1.24.46.52.17 1 .14 1.37.09.42-.06 1.29-.53 1.47-1.04.19-.52.19-.96.13-1.04-.06-.08-.21-.13-.45-.25-.23-.11-1.37-.68-1.58-.75-.21-.08-.37-.11-.52.11-.15.22-.59.75-.73.9-.13.15-.27.17-.5.06a6.32 6.32 0 0 1-2.25-1.39c-.58-.51-1.02-1.15-1.13-1.34-.11-.2-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.34.07-.14.03-.26-.01-.37-.05-.11-.42-1.02-.58-1.4-.15-.38-.32-.33-.44-.33-.12 0-.27-.01-.42-.01z"/></svg>
                 WhatsApp Us
             </a>
+
+            <a href="#portfolio" class="cta-btn btn-projects">
+                <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                Our Projects
+            </a>
         </div>
     </header>
 
-    <!-- <div class="container">
+    <div class="container">
         
         <h2 class="section-title">Our Expert Services</h2>
         <div class="services-grid">
@@ -364,18 +482,16 @@
                 <p>Expert layout formatting, strict plagiarism removal, and full guidance to successfully publish in international conferences.</p>
             </div>
 
-            <div class="service-card" style="max-width: 700px; margin: 40px auto; border-top: 4px solid var(--secondary);">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M5,17H19V5H5V17M4,3H20A2,2 0 0,1 22,5V17A2,2 0 0,1 20,19H16V21H18V23H6V21H8V19H4A2,2 0 0,1 2,17V5A2,2 0 0,1 4,3M9,8H15V10H9V8M9,12H13V14H9V12Z"/></svg>
+            <div class="service-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M5,17H19V5H5V17M4,3H20A2,2 0 0,1 22,5V17A2,2 0 0,1 20,19H16V21H18V23H6V21H8V19H4A2,2 0 0,1 2,17V5A2,2 0 0,1 4,3M9,8H15V10H9V8M9,12H13V14H9V12Z"/></svg>
+                </div>
+                <h3>Defence Preparation</h3>
+                <p>Step-by-step guidelines so you thoroughly understand the code structure, formatting, and circuit connections for your final defense.</p>
             </div>
-            <h3>🎓 Exclusive Defence Preparation Help</h3>
-            <p>We don't just deliver the project and vanish. We provide step-by-step guidelines so you thoroughly understand the code structure, formatting, and circuit connections. Walk into your final defense with 100% confidence!</p>
-        </div>
-
 
         </div>
 
-        
         <div class="policy-section">
             <h2>Our Transparent Payment & Order Policy</h2>
             <p>We believe in building honest professional relationships with university students. Here is how we secure your trust:</p>
@@ -396,76 +512,71 @@
             </div>
         </div>
 
-    </div> -->
-
-<div class="container">
-    
-    <h2 class="section-title">Our Expert Services</h2>
-    <div class="services-grid">
-        
-        <div class="service-card">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M20,18c1.1,0,1.99-0.9,1.99-2L22,6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/></svg>
-            </div>
-            <h3>Web & App Dev</h3>
-            <p>Complete Frontend and Backend solutions for Web, Mobile, and Windows Applications tailored to your semester requirements.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M15,9H9v6h6V9z M13,13h-2v-2h2V13z M19,3H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/></svg>
-            </div>
-            <h3>Arduino & Hardware</h3>
-            <p>Top-notch Arduino-based simulations, circuit schematics, IoT automation, and complete hardware project implementation.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.89,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M16,18H8v-2h8V18z M16,14H8v-2h8V14z M13,9V3.5L18.5,9H13z"/></svg>
-            </div>
-            <h3>Thesis (A-Z)</h3>
-            <p>Comprehensive assistance from scratch including idea generation, model training, methodology formulation, and paper writing.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
-            </div>
-            <h3>Conference Publish</h3>
-            <p>Expert layout formatting, strict plagiarism removal, and full guidance to successfully publish in international conferences.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M5,17H19V5H5V17M4,3H20A2,2 0 0,1 22,5V17A2,2 0 0,1 20,19H16V21H18V23H6V21H8V19H4A2,2 0 0,1 2,17V5A2,2 0 0,1 4,3M9,8H15V10H9V8M9,12H13V14H9V12Z"/></svg>
-            </div>
-            <h3>Defence Preparation</h3>
-            <p>Step-by-step guidelines so you thoroughly understand the code structure, formatting, and circuit connections for your final defense.</p>
-        </div>
-
     </div>
 
-    <div class="policy-section">
-        <h2>Our Transparent Payment & Order Policy</h2>
-        <p>We believe in building honest professional relationships with university students. Here is how we secure your trust:</p>
-        
-        <div class="policy-grid">
-            <div class="policy-item">
-                <h4>1. Token Money</h4>
-                <p>Pay only a minimal amount of token money upfront to lock and confirm your project order with us.</p>
-            </div>
-            <div class="policy-item">
-                <h4>2. Project Progress</h4>
-                <p>Get regular updates with screenshots, videos, or live code checks to track the status of your work.</p>
-            </div>
-            <div class="policy-item">
-                <h4>3. Post-Delivery Payment</h4>
-                <p>The remaining payment is safely cleared only AFTER the complete project has been successfully delivered to you.</p>
+    <section class="projects-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Projects We Have Successfully Delivered</h2>
+            <p style="text-align: center; max-width: 700px; margin: -20px auto 40px; color: #555;">
+                Take a look at some of our top-tier completed work across various engineering domains. High quality, zero plagiarism, and fully explained mechanics guaranteed.
+            </p>
+
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                       <img src="images/edupluse.png" alt="EduPulse Web Project">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Web Application</span>
+                        <h3>EduPulse</h3>
+                        <p>A comprehensive web platform engineered for student assignments, learning milestones, and course content indexing. Features seamless navigation workflows tailored directly for modern academic demands.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/ukecom.png" alt="UK Ecom Mobile Application">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Mobile App</span>
+                        <h3>UK Ecom</h3>
+                        <p>A fully optimized e-commerce system optimized for real-time mobile trade simulations. Connects a fluid user interface design to mock endpoints securely handling inventory state changes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">State Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/student.png" alt="Student Assists Management App">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-badge">Mobile App</span>
+                        <h3>Student Assists</h3>
+                        <p>An intuitive management solution created to monitor academic records, calculate grade statistics, organize routine task reminders, and optimize general university routines effortlessly.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">CRUD Operations</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-
-</div>
+    </section>
 
     <footer>
         <div class="contact-info">
