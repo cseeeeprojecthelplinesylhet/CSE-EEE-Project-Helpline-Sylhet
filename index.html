@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEPHS | CSE EEE Project Helpline, Sylhet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0A192F;
+            --secondary: #F5A623;
+            --facebook: #1877F2;
+            --whatsapp: #25D366;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-area {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .logo-area span {
+            color: var(--secondary);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #ccd6f6;
+        }
+
+        .moto-tag {
+            display: inline-block;
+            background: rgba(245, 166, 35, 0.15);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            padding: 14px 28px;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-call {
+            background-color: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+        }
+        .btn-call:hover {
+            transform: translateY(-3px);
+            background-color: #e0961b;
+            box-shadow: 0 6px 20px rgba(245, 166, 35, 0.6);
+        }
+
+        .btn-fb {
+            background-color: var(--facebook);
+            color: white;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+        }
+        .btn-fb:hover {
+            transform: translateY(-3px);
+            background-color: #145dbf;
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
+        }
+
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            background-color: #1ebd58;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 30px 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, border-top: 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top: 4px solid var(--secondary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 25, 47, 0.05);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .icon-box svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .policy-section {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(10, 25, 47, 0.2);
+        }
+
+        .policy-section h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .policy-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .policy-item h4 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #050c16;
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .footer-links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .contact-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .link-call:hover { background: var(--secondary); color: var(--primary); }
+        .link-fb:hover { background: var(--facebook); color: white; }
+        .link-wa:hover { background: var(--whatsapp); color: white; }
+        .link-git:hover { background: white; color: black; }
+
+        .footer-credits {
+            font-size: 0.85rem;
+            color: #8892b0;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-area { font-size: 2.2rem; }
+            header h1 { font-size: 1.4rem; }
+            .section-title { font-size: 1.8rem; }
+            .policy-section { padding: 25px; }
+            .hero-btn-group { flex-direction: column; max-width: 300px; margin: 10px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">CE<span>PHS</span></div>
+        <h1>CSE EEE Project Helpline, Sylhet</h1>
+        <div class="moto-tag">🎯 Always Gaining Trust & Providing Full Guidelines</div>
+        
+        <div class="hero-btn-group">
+            <a href="tel:01352235077" class="cta-btn btn-call">
+                <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                Call Phone
+            </a>
+            
+            <a href="https://www.facebook.com" target="_blank" class="cta-btn btn-fb">
+                <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+                Message on FB
+            </a>
+            
+            <a href="https://wa.me/8801352235077" target="_blank" class="cta-btn btn-wa">
+                <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.184 8.184 0 0 1-1.26-4.38c.01-4.54 3.7-8.22 8.25-8.22zm-3.83 4.3c-.21 0-.46.08-.66.3-.2.22-.76.74-.76 1.81 0 1.07.78 2.1 0.89 2.25.11.15 1.53 2.34 3.71 3.28.52.22.92.35 1.24.46.52.17 1 .14 1.37.09.42-.06 1.29-.53 1.47-1.04.19-.52.19-.96.13-1.04-.06-.08-.21-.13-.45-.25-.23-.11-1.37-.68-1.58-.75-.21-.08-.37-.11-.52.11-.15.22-.59.75-.73.9-.13.15-.27.17-.5.06a6.32 6.32 0 0 1-2.25-1.39c-.58-.51-1.02-1.15-1.13-1.34-.11-.2-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.34.07-.14.03-.26-.01-.37-.05-.11-.42-1.02-.58-1.4-.15-.38-.32-.33-.44-.33-.12 0-.27-.01-.42-.01z"/></svg>
+                WhatsApp Us
+            </a>
+        </div>
+    </header>
+
+    <!-- <div class="container">
+        
+        <h2 class="section-title">Our Expert Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M20,18c1.1,0,1.99-0.9,1.99-2L22,6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/></svg>
+                </div>
+                <h3>Web & App Dev</h3>
+                <p>Complete Frontend and Backend solutions for Web, Mobile, and Windows Applications tailored to your semester requirements.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M15,9H9v6h6V9z M13,13h-2v-2h2V13z M19,3H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/></svg>
+                </div>
+                <h3>Arduino & Hardware</h3>
+                <p>Top-notch Arduino-based simulations, circuit schematics, IoT automation, and complete hardware project implementation.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.89,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M16,18H8v-2h8V18z M16,14H8v-2h8V14z M13,9V3.5L18.5,9H13z"/></svg>
+                </div>
+                <h3>Thesis (A-Z)</h3>
+                <p>Comprehensive assistance from scratch including idea generation, model training, methodology formulation, and paper writing.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+                </div>
+                <h3>Conference Publish</h3>
+                <p>Expert layout formatting, strict plagiarism removal, and full guidance to successfully publish in international conferences.</p>
+            </div>
+
+            <div class="service-card" style="max-width: 700px; margin: 40px auto; border-top: 4px solid var(--secondary);">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M5,17H19V5H5V17M4,3H20A2,2 0 0,1 22,5V17A2,2 0 0,1 20,19H16V21H18V23H6V21H8V19H4A2,2 0 0,1 2,17V5A2,2 0 0,1 4,3M9,8H15V10H9V8M9,12H13V14H9V12Z"/></svg>
+            </div>
+            <h3>🎓 Exclusive Defence Preparation Help</h3>
+            <p>We don't just deliver the project and vanish. We provide step-by-step guidelines so you thoroughly understand the code structure, formatting, and circuit connections. Walk into your final defense with 100% confidence!</p>
+        </div>
+
+
+        </div>
+
+        
+        <div class="policy-section">
+            <h2>Our Transparent Payment & Order Policy</h2>
+            <p>We believe in building honest professional relationships with university students. Here is how we secure your trust:</p>
+            
+            <div class="policy-grid">
+                <div class="policy-item">
+                    <h4>1. Token Money</h4>
+                    <p>Pay only a minimal amount of token money upfront to lock and confirm your project order with us.</p>
+                </div>
+                <div class="policy-item">
+                    <h4>2. Project Progress</h4>
+                    <p>Get regular updates with screenshots, videos, or live code checks to track the status of your work.</p>
+                </div>
+                <div class="policy-item">
+                    <h4>3. Post-Delivery Payment</h4>
+                    <p>The remaining payment is safely cleared only AFTER the complete project has been successfully delivered to you.</p>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+<div class="container">
+    
+    <h2 class="section-title">Our Expert Services</h2>
+    <div class="services-grid">
+        
+        <div class="service-card">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M20,18c1.1,0,1.99-0.9,1.99-2L22,6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/></svg>
+            </div>
+            <h3>Web & App Dev</h3>
+            <p>Complete Frontend and Backend solutions for Web, Mobile, and Windows Applications tailored to your semester requirements.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M15,9H9v6h6V9z M13,13h-2v-2h2V13z M19,3H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V5h14V19z"/></svg>
+            </div>
+            <h3>Arduino & Hardware</h3>
+            <p>Top-notch Arduino-based simulations, circuit schematics, IoT automation, and complete hardware project implementation.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.89,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M16,18H8v-2h8V18z M16,14H8v-2h8V14z M13,9V3.5L18.5,9H13z"/></svg>
+            </div>
+            <h3>Thesis (A-Z)</h3>
+            <p>Comprehensive assistance from scratch including idea generation, model training, methodology formulation, and paper writing.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+            </div>
+            <h3>Conference Publish</h3>
+            <p>Expert layout formatting, strict plagiarism removal, and full guidance to successfully publish in international conferences.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M5,17H19V5H5V17M4,3H20A2,2 0 0,1 22,5V17A2,2 0 0,1 20,19H16V21H18V23H6V21H8V19H4A2,2 0 0,1 2,17V5A2,2 0 0,1 4,3M9,8H15V10H9V8M9,12H13V14H9V12Z"/></svg>
+            </div>
+            <h3>Defence Preparation</h3>
+            <p>Step-by-step guidelines so you thoroughly understand the code structure, formatting, and circuit connections for your final defense.</p>
+        </div>
+
+    </div>
+
+    <div class="policy-section">
+        <h2>Our Transparent Payment & Order Policy</h2>
+        <p>We believe in building honest professional relationships with university students. Here is how we secure your trust:</p>
+        
+        <div class="policy-grid">
+            <div class="policy-item">
+                <h4>1. Token Money</h4>
+                <p>Pay only a minimal amount of token money upfront to lock and confirm your project order with us.</p>
+            </div>
+            <div class="policy-item">
+                <h4>2. Project Progress</h4>
+                <p>Get regular updates with screenshots, videos, or live code checks to track the status of your work.</p>
+            </div>
+            <div class="policy-item">
+                <h4>3. Post-Delivery Payment</h4>
+                <p>The remaining payment is safely cleared only AFTER the complete project has been successfully delivered to you.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Ready to Ace Your Semester? Let's Talk!</h3>
+            <p style="margin-bottom: 20px; color: #8892b0;">Based in Sylhet. Serving engineering students with premium care.</p>
+            
+            <div class="footer-links-grid">
+                <a href="tel:01352235077" class="contact-link link-call">
+                    📞 Call Phone
+                </a>
+                
+                <a href="https://www.facebook.com" target="_blank" class="contact-link link-fb">
+                    🌐 Facebook Page
+                </a>
+                
+                <a href="https://wa.me/8801352235077" target="_blank" class="contact-link link-wa">
+                    💬 WhatsApp Chat
+                </a>
+                
+                <a href="https://github.com/cseeeeprojecthelplinesylhet" target="_blank" class="contact-link link-git">
+                    💻 GitHub Profile
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-credits">
+            &copy; 2026 CEPHS - CSE EEE Project Helpline, Sylhet. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
